@@ -33,7 +33,7 @@ function setup() {
 
 function ofu() {
   if (frameCount % 50 == 0) {
-    ufo = createSprite(700, random(40, 650))
+    ufo = createSprite(700, random(100, 500))
     ufo.addImage(ufoImg)
     ufo.scale = 0.1;
     ufo.lifetime = 200
@@ -47,10 +47,10 @@ function draw() {
   background("blue");
   if (gamestate == "play") {
     if (keyDown(DOWN_ARROW)) {
-      fly.velocityY = 5;
+      fly.velocityY = 7;
     }
     if (keyDown(UP_ARROW)) {
-      fly.velocityY = -5
+      fly.velocityY = -7
     }
     for (var i = 0; i < ufoGroup.length; i++) {
       if (ufoGroup[i].isTouching(fly)) {
